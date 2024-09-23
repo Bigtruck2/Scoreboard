@@ -1,8 +1,7 @@
 public class Scoreboard {
-    private final String teamOneName;
-    private final String teamTwoName;
+    private final String teamOneName,teamTwoName;
     private boolean teamOneActive = true;
-    int[] scores = {0,0};
+    private final int[] scores = {0,0};
     public Scoreboard(String teamOneName, String teamTwoName){
         this.teamOneName = teamOneName;
         this.teamTwoName = teamTwoName;
@@ -15,6 +14,6 @@ public class Scoreboard {
         scores[teamOneActive ? 0 :1] += pointsScored;
     }
     public String getScore() {
-        return scores[0]+"-"+scores[1]+ (teamOneActive ? teamOneName : teamTwoName);
+        return scores[0]+"-"+scores[1]+"-"+(teamOneActive ? teamOneName : teamTwoName);
     }
 }

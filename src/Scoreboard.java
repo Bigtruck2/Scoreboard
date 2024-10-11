@@ -13,6 +13,19 @@ public class Scoreboard {
         }
         scores[teamOneActive ? 0 :1] += pointsScored;
     }
+
+    public int[] getScores() {
+        return scores;
+    }
+
+    public String getTeamOneName() {
+        return teamOneName;
+    }
+
+    public String getTeamTwoName() {
+        return teamTwoName;
+    }
+
     public String getScore() {
         return scores[0]+"-"+scores[1]+"-"+(teamOneActive ? teamOneName : teamTwoName);
     }

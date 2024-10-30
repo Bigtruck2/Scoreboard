@@ -2,7 +2,6 @@ public class Scoreboard {
     private final String teamOneName,teamTwoName;
     private boolean teamOneActive = true;
     private final int[] scores = {0,0};
-    private final int[] wins = {0,0};
 
     public Scoreboard(String teamOneName, String teamTwoName){
         this.teamOneName = teamOneName;
@@ -13,12 +12,11 @@ public class Scoreboard {
             teamOneActive =! teamOneActive;
             return;
         }
-        scores[teamOneActive ? 0 :1] += pointsScored;
-        wins[teamOneActive ? 0 : 1]++;
+        scores[teamOneActive ? 0 : 1] += pointsScored;
     }
 
-    public int[] getWins() {
-        return wins;
+    public int[] getScores() {
+        return scores;
     }
 
     public String getTeamOneName() {

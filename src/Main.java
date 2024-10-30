@@ -37,23 +37,10 @@ public class Main {
         wins = game.getWins();
         if (wins[0] > wins[1]) {
             winingScores.put(wins[0],game.getTeamOneName());
-        } else {
+        } else if (wins[0] < wins[1]) {
             winingScores.put(wins[1],game.getTeamTwoName());
         }
 
-
-        sort(winingScores);
-    }
-    public static void sort(HashMap<Integer, String> winingScores){
-        while (!winingScores.isEmpty()) {
-            Map.Entry<Integer, String> max= Map.entry(0, "");
-            for (Map.Entry<Integer, String> i : winingScores.entrySet()) {
-                if(i.getKey()>max.getKey()){
-                    max = i;
-                }
-            }
-            System.out.println(max);
-            winingScores.remove(max.getKey(),max.getValue());
-        }
+        winingScores.keySet().forEach((i)->System.out.printf("Score: %d Team: %s\n",i,winingScores.get(i)));
     }
 }
